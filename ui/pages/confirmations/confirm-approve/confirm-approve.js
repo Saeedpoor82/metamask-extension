@@ -131,10 +131,7 @@ export default function ConfirmApprove({
   }, [customNonceValue, nextNonce]);
 
   const checkIfContract = useCallback(async () => {
-    const { isContractAddress } = await readAddressAsContract(
-      global.eth,
-      toAddress,
-    );
+    const { isContractAddress } = await readAddressAsContract(global.eth, toAddress);
     setIsContract(isContractAddress);
   }, [setIsContract, toAddress]);
 

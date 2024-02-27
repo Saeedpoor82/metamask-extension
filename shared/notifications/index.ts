@@ -12,6 +12,22 @@ export const NOTIFICATION_BLOCKAID_DEFAULT = 29;
 export const NOTIFICATION_STAKING_PORTFOLIO = 30;
 export const NOTIFICATION_PETNAMES = 31;
 
+
+interface NotificationImage {
+  src: string;
+  width: string;
+}
+
+interface UINotification {
+  id: number;
+  date: string | null;
+  image?: NotificationImage;
+}
+
+// Assuming all keys in UI_NOTIFICATIONS are of the same structure
+interface UINotifications {
+  [key: number]: UINotification;
+}
 export const UI_NOTIFICATIONS = {
   8: {
     id: 8,

@@ -7,10 +7,7 @@ describe('Contract Utils', () => {
         cb(null, '0xa');
       },
     };
-    const { isContractAddress } = await readAddressAsContract(
-      mockEthQuery,
-      '0x76B4aa9Fc4d351a0062c6af8d186DF959D564A84',
-    );
+    const { isContractAddress } = await readAddressAsContract(mockEthQuery, '0x76B4aa9Fc4d351a0062c6af8d186DF959D564A84');
     expect(isContractAddress).toStrictEqual(true);
 
     mockEthQuery = {
@@ -20,10 +17,7 @@ describe('Contract Utils', () => {
     };
 
     const { isContractAddress: isNotContractAddress } =
-      await readAddressAsContract(
-        mockEthQuery,
-        '0x76B4aa9Fc4d351a0062c6af8d186DF959D564A84',
-      );
+      await readAddressAsContract(mockEthQuery, '0x76B4aa9Fc4d351a0062c6af8d186DF959D564A84');
     expect(isNotContractAddress).toStrictEqual(false);
   });
 });
